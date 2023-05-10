@@ -220,7 +220,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void UARTInterruptConfig (){
 	// start UART in DMA Mode
-	HAL_UART_Receive_IT(&huart2, RxBuffer, 10);
+	HAL_UART_Receive_IT(&huart2, RxBuffer, 1);
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
@@ -235,7 +235,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 		//recall Receive
 		HAL_UART_Receive_IT(huart, RxBuffer, 10);
-
 	}
 }
 void DummyTask(){

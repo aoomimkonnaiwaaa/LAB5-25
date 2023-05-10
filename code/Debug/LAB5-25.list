@@ -796,8 +796,8 @@ void UARTInterruptConfig (){
  80007b4:	b580      	push	{r7, lr}
  80007b6:	af00      	add	r7, sp, #0
 	// start UART in DMA Mode
-	HAL_UART_Receive_IT(&huart2, RxBuffer, 10);
- 80007b8:	220a      	movs	r2, #10
+	HAL_UART_Receive_IT(&huart2, RxBuffer, 1);
+ 80007b8:	2201      	movs	r2, #1
  80007ba:	4903      	ldr	r1, [pc, #12]	; (80007c8 <UARTInterruptConfig+0x14>)
  80007bc:	4803      	ldr	r0, [pc, #12]	; (80007cc <UARTInterruptConfig+0x18>)
  80007be:	f001 fa35 	bl	8001c2c <HAL_UART_Receive_IT>
@@ -849,7 +849,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  8000806:	4905      	ldr	r1, [pc, #20]	; (800081c <HAL_UART_RxCpltCallback+0x4c>)
  8000808:	6878      	ldr	r0, [r7, #4]
  800080a:	f001 fa0f 	bl	8001c2c <HAL_UART_Receive_IT>
-
 	}
 }
  800080e:	bf00      	nop
